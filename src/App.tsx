@@ -1,16 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ServiceFilter from "./components/ServiceFilter";
 import ServiceAdd from "./components/ServiceAdd";
 import ServiceList from "./components/ServiceList";
+import UnionComponent from './components/UnionComponent';
 
 function App() {
   return (
-    <div className="App">
-      <ServiceFilter />
-      <ServiceAdd />
-      <ServiceList />
+    <div className="main App">
+      <UnionComponent />
     </div>
   );
 }

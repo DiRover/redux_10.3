@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+
+.main {
+  margin-top: 50px;
+  padding: 30px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-menu {
+  margin-bottom: 30px;
+}
+
+.btn-list {
+  margin-left: 30px;
+}
+
+.items-page {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.item-container {
+  margin: 20px auto;
+  display: flex;
+}
+
+.picture {
+  width: 100px;
+}
+
+.item-description {
+  margin-left: 20px;
+}
+
+.vehicle-name {
+  border-bottom: 2px solid black;
+  font-weight: bold;
+}
+
+.price-box {
+  display: flex;
+}
+
+.price-text {
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.price-disc {
+  text-decoration: line-through;
+}

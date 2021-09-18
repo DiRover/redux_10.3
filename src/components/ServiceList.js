@@ -1,38 +1,30 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {useSelector, useDispatch} from 'react-redux';
-import {removeService, editExistService} from '../actions/actionCreators';
+import {Link} from "react-router-dom";
 
 function ServiceList() {
   const items = useSelector(state => state.serviceList);
+  console.log(items);
   const dispatch = useDispatch();
-  const [state, setState] = useState(true);
-  useEffect(() => {
-    setState(() => {
-      return  true;
-    });
-  },[items])
-
-  const handleRemove = id => {
-    dispatch(removeService(id));
-  }
-
-  const handleEdit = (id, name, price) => {
-    setState(() => {
-      return  false;
-    });
-    dispatch(editExistService(id, name, price))
-  }
 
   return (
-    <ul>
-      {items.map(service => (
-        <li key={service.id}>
-          {service.name} {service.price}
-          <button onClick={() => handleEdit(service.id, service.name, service.price)}>Edit</button>
-          {state ? <button onClick={() => handleRemove(service.id)}>✕</button> : <></>}
-        </li>
-      ))}
-    </ul>
+      <React.Fragment>
+          <Link to='/'><button type='button' className="btn btn-outline-secondary">Back to start page</button></Link>
+          <Link to='/add'><button type='button' className="btn-list btn btn-outline-secondary">Add vehicle</button></Link>
+          <div className="items-page">
+              {items.map((service) =>
+                  <div key={service.id} className="item-container">
+                      <div className="picture">{service.picture}</div>
+                      <div className="item-description">
+                          <div className="vehicle-name">{service.vehicle}</div>
+                          {service.discount ? <div className="price-box"><div className="price-text">Old price</div><div className="price-disc">{service.price}</div></div> :
+                              <div className="price-box"><div className="price-text">Price</div><div className="price">{service.price}</div></div>}
+                          {service.priceWIthDisc ? <div className="priceWithDisc">New price {service.priceWIthDisc}</div> : null}
+                          {service.discount ? <div className="discount">Discount! {service.discount} %</div> : null}
+                      </div>
+                  </div>)}
+          </div>
+      </React.Fragment>
   )
 }
 
