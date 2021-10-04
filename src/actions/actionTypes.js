@@ -1,2 +1,0 @@
-export const ADD_SERVICE = 'ADD_SERVICE';
-export const CHANGE_SERVICE_FIELD = 'CHANGE_SERVICE_FIELD';

@@ -1,11 +1,9 @@
 import React from 'react'
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {Link} from "react-router-dom";
-
+//компонент с отображением списка
 function ServiceList() {
   const items = useSelector(state => state.serviceList);
-  console.log(items);
-  const dispatch = useDispatch();
 
   return (
       <React.Fragment>
